@@ -51,8 +51,6 @@ char *strcpy_f(char *dest, const char *src)
  */
 char *strchr_f(const char *str, int target)
 {
-        int i = 0;
-
         while (*str != target)
                 str++;
 
