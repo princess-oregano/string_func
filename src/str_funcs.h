@@ -10,5 +10,5 @@ char  *strchr_f(const char *str, int target);
 int    strcmp_f(const char *lhs, const char *rhs);
 char  *strcat_f(char *dest, const char *src);
 
-#endif // STR_FUNCS_H 
+#endif // STR_FUNCS_H
 

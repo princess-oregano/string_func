@@ -3,11 +3,11 @@
 void test_strlen_f()
 {
         const int STRING_SIZE = 50;
-        
+
         char str[STRING_SIZE] = {};
 
         fgets(str, STRING_SIZE, stdin);
-       
+
         fprintf(stderr, "strlen():   %zu\n", strlen(str));
         fprintf(stderr, "strlen_f(): %zu\n", strlen_f(str));
 }
@@ -30,7 +30,7 @@ void test_strcpy_f()
         printf("strcpy_f():%s\n", dest2);
 }
 
-void test_strchr_f() 
+void test_strchr_f()
 {
         int target = 'a';
         char str[] = "Cat";
@@ -67,4 +67,4 @@ void test_strcat_f()
         printf("strcat_f(): %s\n", dest2);
 }
 
-        
+
