@@ -77,6 +77,6 @@ clean:
 distclean:
 	printf "%s\n" "Removing built files..."
 	rm -rf $(OBJDIR)
-	rm quadratic
+	rm $(TARGET)
 	printf "%s\n" "Done."
 
