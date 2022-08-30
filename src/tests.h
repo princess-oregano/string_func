@@ -3,6 +3,8 @@
 
 #include "str_funcs.h"
 
+const int STRING_SIZE = 50;
+
 void test_strlen_f();
 void test_strcpy_f();
 void test_strchr_f();

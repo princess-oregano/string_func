@@ -2,7 +2,6 @@
 
 void test_strlen_f()
 {
-        const int STRING_SIZE = 50;
 
         char str[STRING_SIZE] = {};
 
@@ -14,14 +13,11 @@ void test_strlen_f()
 
 void test_strcpy_f()
 {
-        const int SRC_SIZE = 4;
-        const int DEST_SIZE = 5;
+        char src[STRING_SIZE] = "Cat";
+        char dest1[STRING_SIZE] = "Cute";
+        char dest2[STRING_SIZE] = {};
 
-        char src[SRC_SIZE] = "Cat";
-        char dest1[DEST_SIZE] = "Cute";
-        char dest2[DEST_SIZE] = {};
-
-        memcpy(dest2, dest1, DEST_SIZE);
+        memcpy(dest2, dest1, STRING_SIZE);
 
         strcpy(dest1, src);
         strcpy_f(dest2, src);
@@ -41,8 +37,8 @@ void test_strchr_f()
 
 void test_strcmp_f()
 {
-        char lhs[50] = {};
-        char rhs[50] = {};
+        char lhs[STRING_SIZE] = {};
+        char rhs[STRING_SIZE] = {};
 
         scanf("%s %s", lhs, rhs);
 
@@ -52,13 +48,13 @@ void test_strcmp_f()
 
 void test_strcat_f()
 {
-        char dest1[50] = {};
-        char dest2[50] = {};
-        char src[50] = {};
+        char dest1[STRING_SIZE] = {};
+        char dest2[STRING_SIZE] = {};
+        char src[STRING_SIZE] = {};
 
         scanf("%s %s", dest1, src);
 
-        memcpy(dest2, dest1, 50);
+        memcpy(dest2, dest1, STRING_SIZE);
 
         strcat(dest1, src);
         strcat_f(dest2, src);
