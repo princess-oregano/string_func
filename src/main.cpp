@@ -6,10 +6,11 @@ int main()
 
         printf("Choose a function to test:\n"
                "1) strlen_f()\n"
-               "2) scrcpy_f()\n"
+               "2) strcpy_f()\n"
                "3) strchr_f()\n"
                "4) strcmp_f()\n"
-               "5) strcat_f()\n");
+               "5) strcat_f()\n"
+               "6) getline_f()\n");
 
         while(scanf("%d", &choice)) {
                 while (getchar() != '\n')
@@ -30,6 +31,9 @@ int main()
                                 break;
                         case 5:
                                 test_strcat_f();
+                                break;
+                        case 6:
+                                test_getline_f();
                                 break;
                         default: 
                                 printf("Wrong input.\n");

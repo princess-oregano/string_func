@@ -1,9 +1,3 @@
-#ifdef __STDC_ALLOC_LIB__
-#define __STDC_WANT_LIB_EXT2__ 1
-#else
-#define _POSIX_C_SOURCE 200809L
-#endif
-
 #include "tests.h"
 #include <stdlib.h>
 
@@ -49,8 +43,7 @@ void test_strchr_f()
         printf("Enter a line: ");
         fgets(str, STRING_SIZE, stdin);
         str[strlen(str)-1] = '\0';
-        printf("Enter a character to locate: ");
-        scanf("%c", &target);
+        target = '\0';
 
         while (getchar() != '\n')
                 ;
@@ -95,5 +88,17 @@ void test_strcat_f()
 
         printf("srtcat():   %s\n", dest1);
         printf("strcat_f(): %s\n", dest2);
+}
+
+void test_getline_f()
+{
+        char *lineptr = NULL;
+        size_t n = 0;
+
+        getline(&lineptr, &n, stdin);
+        printf("%s", lineptr);
+        getline_f(&lineptr, &n, stdin);
+        printf("%s", lineptr);
+        free(lineptr);
 }
 
