@@ -97,13 +97,10 @@ int strcmp_f(const char *lhs, const char *rhs)
  */
 char *strcat_f(char *dest, const char *src)
 {
-        int size_dest = (int) strlen(dest);
-        int size_src  = (int) strlen(src);
-        int i = 0;
-        int j = 0;
+        size_t size_dest = strlen(dest);
 
-        for (i = size_dest, j = 0; j <= size_src; i++, j++)
-                dest[i] = src[j];
+        for (size_t i = size_dest; *src != '\0'; i++, src++)
+                dest[i] = *src;
 
         return dest;
 }
