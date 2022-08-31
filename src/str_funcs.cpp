@@ -73,22 +73,10 @@ char *strchr_f(const char *str, int target)
  */
 int strcmp_f(const char *lhs, const char *rhs)
 {
-        int lhs_len = (int) strlen(lhs);
-        int rhs_len = (int) strlen(rhs);
+        for ( ; *lhs != '\0' && *rhs != '\0' && *lhs == *rhs; lhs++, rhs++)
+                ;
 
-        int len = (lhs_len > rhs_len) ? rhs_len : lhs_len;
-
-        int i = 0;
-
-        for (i = 0; i < len && lhs[i] == rhs[i]; i++)
-               ;
-
-        if (lhs[i] - rhs[i] > 0)
-                return 1;
-        else if (lhs[i] - rhs[i] < 0)
-                return -1;
-        else 
-                return 0;
+        return (*lhs - *rhs);
 }
 
 /*
