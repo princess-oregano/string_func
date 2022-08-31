@@ -5,7 +5,7 @@ void test_strlen_f()
 {
         char str[STRING_SIZE] = {};
 
-        printf("Enter a line: ");
+        printf("Enter a line:\n");
         fgets(str, STRING_SIZE, stdin);
         str[strlen(str)-1] = '\0';
         
@@ -19,10 +19,10 @@ void test_strcpy_f()
         char dest1[STRING_SIZE] = {};
         char dest2[STRING_SIZE] = {};
 
-        printf("Enter a line to copy: ");
+        printf("Enter a line to copy:\n");
         fgets(src, STRING_SIZE, stdin);
         src[strlen(src)-1] = '\0';
-        printf("Enter a destination line: ");
+        printf("Enter a destination line:\n");
         fgets(dest1, STRING_SIZE, stdin);
         dest1[strlen(dest1)-1] = '\0';
         
@@ -40,7 +40,7 @@ void test_strchr_f()
         char target = '\0';
         char str[STRING_SIZE] = {};
 
-        printf("Enter a line: ");
+        printf("Enter a line:\n");
         fgets(str, STRING_SIZE, stdin);
         str[strlen(str)-1] = '\0';
         target = '\0';
@@ -57,10 +57,10 @@ void test_strcmp_f()
         char lhs[STRING_SIZE] = {};
         char rhs[STRING_SIZE] = {};
 
-        printf("Enter the first line: ");
+        printf("Enter the first line:\n");
         fgets(lhs, STRING_SIZE, stdin);
         lhs[strlen(lhs)-1] = '\0';
-        printf("Enter the second line: ");
+        printf("Enter the second line:\n");
         fgets(rhs, STRING_SIZE, stdin);
         rhs[strlen(rhs)-1] = '\0';
 
@@ -74,10 +74,10 @@ void test_strcat_f()
         char dest2[STRING_SIZE] = {};
         char src[STRING_SIZE] = {};
 
-        printf("Enter the first line: ");
+        printf("Enter the first line:\n");
         fgets(dest1, STRING_SIZE, stdin);
         dest1[strlen(dest1)-1] = '\0';
-        printf("Enter the second line: ");
+        printf("Enter the second line:\n");
         fgets(src, STRING_SIZE, stdin);
         src[strlen(src)-1] = '\0';
 
@@ -95,8 +95,7 @@ void test_getline_f()
         char *lineptr = NULL;
         size_t n = 0;
 
-        getline(&lineptr, &n, stdin);
-        printf("%s", lineptr);
+        printf("Enter a line:\n");
         getline_f(&lineptr, &n, stdin);
         printf("%s", lineptr);
         free(lineptr);
