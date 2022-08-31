@@ -124,7 +124,9 @@ ssize_t getline_f(char **lineptr, size_t *n, FILE *stream)
 {
         char ch = 0;
         char *ptr_ch = NULL;
-        size_t buf_size = *n;
+        size_t add_buf_size = 10;
+        size_t buf_size = *n + add_buf_size;
+        size_t max_buf_size = buf_size + add_buf_size;
         int i = 0;
 
         if (*lineptr == NULL || *n == 0) {
@@ -145,14 +147,17 @@ ssize_t getline_f(char **lineptr, size_t *n, FILE *stream)
                         *ptr_ch = '\0';
                         return ptr_ch - *lineptr;
                 }
+ 
+                if (buf_size + 2 >= max_buf_size) {
+                        buf_size = max_buf_size;
+                        max_buf_size += add_buf_size;
+                        ssize_t delta = ptr_ch - *lineptr;
+                        char *n_lineptr = NULL;
 
-                ++buf_size;
-                ssize_t delta = ptr_ch - *lineptr;
-                char *n_lineptr = NULL;
+                        n_lineptr = (char *) realloc(*lineptr, (buf_size * sizeof(char)));
 
-                n_lineptr = (char *) realloc(*lineptr, (buf_size * sizeof(char)));
-
-                *lineptr = n_lineptr;
-                ptr_ch = n_lineptr + delta;
+                        *lineptr = n_lineptr;
+                        ptr_ch = n_lineptr + delta;
+                }
         }
 }
