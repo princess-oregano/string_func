@@ -6,6 +6,7 @@ Implementations of some string functions.
 * [Available functions](#available-functions)
 * [Installation and setup](#installation-and-setup)
 * [Usage](@usage)
+* [Additional info](@additional-info)
 
 ## Prerequisites
 * `git`
@@ -13,12 +14,12 @@ Implementations of some string functions.
 * `g++`
 
 ## Available functions implementations
-* strlen_f() for strlen()
-* strcpy_f() for strcpy()
-* strchr_f() for strchr()
-* strcmp_f() for strcmp()
-* strcat_f() for strcat()
-* getline_f() for getline()
+* ***strlen_f()*** for strlen()
+* ***strcpy_f()*** for strcpy()
+* ***strchr_f()*** for strchr()
+* ***strcmp_f()*** for strcmp()
+* ***strcat_f()*** for strcat()
+* ***getline_f()*** for getline()
 
 ## Installation and setup
 1. Download all source files into one folder:
@@ -49,4 +50,7 @@ $ make distclean
 After you start the program, you will see a menu with 6 options, each option is corresponding to a function test.
 To choose an option, print a letter corresponding to it, and hit `<Enter>`.
 To exit a program type any character other than integer numbers.
+
+## Additional info
+These implementations may not work the same way standart functions work in your system, but they still correspond with standart description.
 
