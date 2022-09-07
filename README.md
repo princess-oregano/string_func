@@ -24,7 +24,7 @@ Implementations of some string functions.
 ## Installation and setup
 1. Download all source files into one folder:
 ```
-$ git clone https://github.com/tyvia/string_func
+$ git clone https://github.com/princess-oregano/string_func
 ```
 2. Open the subfolder with source files and build with Make:
 ```
