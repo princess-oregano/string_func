@@ -73,7 +73,7 @@ char *strchr_f(const char *str, int target)
  */
 int strcmp_f(const char *lhs, const char *rhs)
 {
-        for ( ; *lhs != '\0' && *rhs != '\0' && *lhs == *rhs; lhs++, rhs++)
+        for ( ; *lhs == *rhs && *lhs != '\0'; lhs++, rhs++)
                 ;
 
         return (*lhs - *rhs);
